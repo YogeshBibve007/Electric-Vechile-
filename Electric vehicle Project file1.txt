@@ -1,0 +1,33 @@
+Project Domain -The domain of the project appears to be within the automotive industry, specifically focusing on electric vehicles (EVs), with a particular emphasis on Battery Electric Vehicles (BEVs) and Plug-in Hybrid Electric Vehicles (PHEVs). The project aims to analyze various aspects of the EV market landscape, such as total vehicles analysis, average electric range assessment, and market analysis for both BEVs and PHEVs.
+
+
+Project Summary:- Electric Vehicle Market Analysis
+
+This project aims to provide a comprehensive analysis of the electric vehicle (EV) market landscape, focusing on Battery Electric Vehicles (BEVs) and Plug-in Hybrid Electric Vehicles           (PHEVs). By leveraging data analytics with Power BI, the following key objectives will be addressed:
+1.Total Vehicles Analysis
+2.Average Electric Range Assessment
+3.BEV Market Analysis
+4.PHEV Market Analysis
+
+
+SQL Queries:-
+
+1.Consider a database table named electric vehicles that stores information about electric vehicles. The table has columns: manufacturer, vehicle type, and electric range. Write a SQL query to retrieve the count of battery electric vehicles (BEVs) for each manufacturer along with the average electric range for each manufacturer. Ensure that only BEVs are included in the results.
+ans-  COUNT(*) AS bev_count, AVG(electric_range) AS avg_range
+FROM electric_vehicles
+WHERE vehicle_type = 'BEV'
+GROUP BY manufacturer;
+
+2.Retrieve the count of total electric vehicle
+ans-  SELECT COUNT(*) AS total_vehicles
+FROM electric_vehicles;
+
+3.Calculate the Average Electric Range Assessment
+ans- SELECT AVG(electric_range) AS average_electric_range
+FROM electric_vehicles;
+
+4.Write a SQL query to find the count of plug-in hybrid electric vehicles (PHEVs) produced by each manufacturer, along with the average electric range of PHEVs produced by each manufacturer. Ensure that only PHEVs are considered in the results.
+ans-SELECT manufacturer, COUNT(*) AS phev_count, AVG(electric_range) AS avg_range
+FROM electric_vehicles
+WHERE vehicle_type = 'PHEV'
+GROUP BY manufacturer;
